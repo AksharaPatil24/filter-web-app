@@ -1,5 +1,5 @@
-lipsX=0
-lipsY=0
+noseX=0
+noseY=0
 function preload() {
     lipstick = loadImage('https://i.postimg.cc/G3ZPWMMq/lipstick.png');
 }
@@ -24,16 +24,16 @@ function gotPoses(results)
     if(results.length > 0)
     {
         console.log(results);
-        lipsX = results[0].pose.lips.x;
-        lipsX = results[0].pose.lips.x;
-        console.log("lips x = " + results[0].pose.lips.x );
-        console.log("lips y = " + results[0].pose.lips.y);
+        noseX = results[0].pose.nose.x;
+        noseY = results[0].pose.nose.y;
+        console.log("lips x = " + results[0].pose.nose.x );
+        console.log("lips y = " + results[0].pose.nose.y);
     }
 }
 
 function draw() {
     image(video, 0, 0, 300, 300);
-    image(lipstick, lipsX, lipsY, 30, 30)
+    image(lipstick, noseX, noseY, 30, 30);
 }
 
 function take_snapshot(){
